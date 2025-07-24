@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <meta charset="UTF-8">
+    <title>Electron-Ion Simulation Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2 {
+            color: #004080;
+        }
+        .plot-container {
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background: #fff;
+        }
+        .caption {
+            font-size: 1.0em;
+            color: #333;
+            margin-top: 5px;
+        }
+        .data-link {
+            margin-top: 20px;
+            display: block;
+        }
+        
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.button-grid li {
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 18px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 5px 0 #005fa3;
+  transition: all 0.1s ease-in-out;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #005fa3;
+}
+
+.button:active {
+  top: 3px;
+  box-shadow: 0 2px 0 #004f8c;
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Electron-Ion Simulation Analysis</h1>
+    <p>This page contains key figures and datasets used in our study of electron-ion simulation. The simulation parameters are as follows:</p>
+    <p> (a) Resolution = \( 768^3 \) with skin depth resolved by 3 cells </p>
+    <p> (b) \( \theta = kT/m_ec^2 = 0.3\) and \(T_i/T_e =1.0\). The mass ratio is taken to be \( m_i/m_e = 10\) </p>
+    <p> (c) Driving scale \( = \ell_0 = 768/2 = 384\) ; Eddie turnover time \(\ell_0/c=384/0.45\)
+
+    <div class="plot-container">
+        <h2>Section 1: Particle Energy Spectrum</h2>
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="figures/dnde_e.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 510px;">
+                <div class="caption">Figure 1: Electron spectrum</div>
+            </div>
+            <div>
+                <img src="figures/dnde_p.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 510px;">
+                <div class="caption">Figure 2: Proton spectrum</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="plot-container">
+        <h2>Section 2: Magnetic and kinetic energy energy spectrum (using \(\bar{v}_e\))</h2>
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="figures/Ek_B.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 500px;">
+                <div class="caption">Figure 3: Magnetic energy spectrum</div>
+            </div>
+            <div>
+                <img src="figures/Ek_ve.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 520px;">
+                <div class="caption">Figure 4: Kinetic energy spectrum</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Section 3: Sample particles (ion)</h2>
+    <ul class="button-grid">
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_1.html">test_particle_1</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_2.html">test_particle_2</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_3.html">test_particle_3</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_4.html">test_particle_4</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_5.html">test_particle_5</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_6.html">test_particle_6</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_7.html">test_particle_7</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_8.html">test_particle_8</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_9.html">test_particle_9</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_10.html">test_particle_10</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_11.html">test_particle_11</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_12.html">test_particle_12</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_13.html">test_particle_13</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_14.html">test_particle_14</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_15.html">test_particle_15</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_16.html">test_particle_16</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_17.html">test_particle_17</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_18.html">test_particle_18</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_19.html">test_particle_19</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_20.html">test_particle_20</a></li>
+        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_21.html">test_particle_21</a></li>
+    </ul>
+
+    <h2>Section 4: Sample particles (electron)</h2>
+    <ul class="button-grid">
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_1.html">test_particle_1</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_2.html">test_particle_2</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_3.html">test_particle_3</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_4.html">test_particle_4</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_5.html">test_particle_5</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_6.html">test_particle_6</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_7.html">test_particle_7</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_8.html">test_particle_8</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_9.html">test_particle_9</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_10.html">test_particle_10</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_11.html">test_particle_11</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_12.html">test_particle_12</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_13.html">test_particle_13</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_14.html">test_particle_14</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_15.html">test_particle_15</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_16.html">test_particle_16</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_17.html">test_particle_17</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_18.html">test_particle_18</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_19.html">test_particle_19</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_20.html">test_particle_20</a></li>
+        <li><a class="button" target="_blank" href="test_particle_e/test_particle_21.html">test_particle_21</a></li>
+    </ul>
+
+    <h2>Section 5: Statistical analysis of correlation between various quantities (ions)</h2>
+    <img src="figures/corr_data_p.png" alt="corr_p" width="1000">
+    <div class="caption">Figure 5: \( \gamma_p<2 \) at \(t=0 \) and \(\gamma_p>35</2>\) at \(t=3.1\ell_0/c\). 
+        Continuous intervals with \(\Delta t>0.2\ell_0/c\) are chosen with \(\Gamma_d<1.5\). 
+        The total <br> number of particles is 189. Colors represent the 2D PDF of the quantities.</div>
+
+    <br><br>
+    <img src="figures/corr_data_p_time.png" alt="corr_p_time" width="1000">
+    <div class="caption">Figure 6: Same as Fig. 5 with colors representing the timestamp of individual data points.</div>
+
+    <br><br>
+    <img src="figures/hist_2d_p.png" alt="corr_p_2Dhist" width="650">
+    <div class="caption">Figure 7: Same as Fig. 5 but over the entire range of values and with colors  <br>
+        representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
+    <br>
+        
+    <h2>Section 6: Statistical analysis of correlation between various quantities (electrons)</h2>
+    <img src="figures/corr_data_e.png" alt="corr_p" width="1000">
+    <div class="caption">Figure 8: \( \gamma_p<2 \) at \(t=0 \) and \(\gamma_p>350</2>\) at \(t=3.1\ell_0/c\). 
+        Continuous intervals with \(\Delta t>0.2\ell_0/c\) are chosen with \(\Gamma_d<1.5\). 
+        The total <br> number of particles is 189. Colors represent the 2D PDF of the quantities.</div>
+
+    <br><br>
+    <img src="figures/corr_data_e_time.png" alt="corr_p_time" width="1000">
+    <div class="caption">Figure 9: Same as Fig. 8 with colors representing the timestamp of individual data points.</div>
+    
+    <br><br>
+    <img src="figures/hist_2d_e.png" alt="corr_p_2Dhist" width="650">
+    <div class="caption">Figure 10: Same as Fig. 8 but over the entire range of values and with colors  <br>
+        representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
+    <br>
+
+    <div class="plot-container">
+        <h2>Section 7: Magnetic field distribution, \(|b| = \sqrt{b_x^2 + b_y^2 + b_z^2}/b_0\)</h2>
+        
+    </div>
+
+    <h2>Section 8: Current density distribution, \(|j| = \sqrt{j_x^2 + j_y^2 + j_z^2}/n_0q_ec\)</h2>
+    <img src="figures/j_dist_time.png" alt="corr_p_2Dhist" width="550">
+    <div class="caption">Figure 10: PDFs of \(j\) over the box grid measured at different times.</div>
+    <br><br>
+    <div class="plot-container">
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="figures/j850.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 510px;">
+                <div class="caption">Figure 14(a): \(t=1.0\ell_0/c\)</div>
+            </div>
+            <div>
+                <img src="figures/j1710.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 510px;">
+                <div class="caption">Figure 14(b): \(t=2.0\ell_0/c\)</div>
+            </div>
+            <div>
+                <img src="figures/j2560.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 510px;">
+                <div class="caption">Figure 14(c): \(t=3.0\ell_0/c\)</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <p style="font-size: 0.8em;">Created by Saikat Das — Last updated July 2025</p>
+    </footer>
+
+</body>
+</html>
+
