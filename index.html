@@ -10,6 +10,7 @@
     <title>Electron-Ion Simulation Analysis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        
         body {
             font-family: sans-serif;
             margin: 40px;
@@ -76,25 +77,30 @@
   box-shadow: 0 2px 0 #004f8c;
 }
 
+h3 {
+      color: green;
+    }
+  </style>
+
     </style>
 </head>
 <body>
 
     <h1>Electron-Ion Simulation Analysis</h1>
     <p>This page contains key figures and datasets used in our study of electron-ion simulation. The simulation parameters are as follows:</p>
-    <p> (a) Resolution = \( 768^3 \) with skin depth resolved by 3 cells </p>
+    <p> (a) Resolution = \( 512^3 \); skin depth resolved by \(\hat{d}_e=3\) cells, courant number \(\hat{c}=0.45\) </p>
     <p> (b) \( \theta = kT/m_ec^2 = 0.3\) and \(T_i/T_e =1.0\). The mass ratio is taken to be \( m_i/m_e = 10\) </p>
-    <p> (c) Driving scale \( = \ell_0 = 768/2 = 384\) ; Eddie turnover time \(\ell_0/c=384/0.45\)
+    <p> (c) Driving scale \( = \ell_0 = 512/1 = 512\) ; Eddie turnover time \(\ell_0/c=512/0.45\)
 
     <div class="plot-container">
         <h2>Section 1: Particle Energy Spectrum</h2>
         <div style="display: flex; gap: 20px;">
             <div>
-                <img src="figures/dnde_e.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 510px;">
+                <img src="figures/dnde_e.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350;">
                 <div class="caption">Figure 1: Electron spectrum</div>
             </div>
             <div>
-                <img src="figures/dnde_p.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 510px;">
+                <img src="figures/dnde_p.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350;">
                 <div class="caption">Figure 2: Proton spectrum</div>
             </div>
         </div>
@@ -104,11 +110,11 @@
         <h2>Section 2: Magnetic and kinetic energy energy spectrum (using \(\bar{v}_e\))</h2>
         <div style="display: flex; gap: 20px;">
             <div>
-                <img src="figures/Ek_B.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 500px;">
+                <img src="figures/Ek_B.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350;">
                 <div class="caption">Figure 3: Magnetic energy spectrum</div>
             </div>
             <div>
-                <img src="figures/Ek_ve.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 520px;">
+                <img src="figures/Ek_ve.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350;">
                 <div class="caption">Figure 4: Kinetic energy spectrum</div>
             </div>
         </div>
@@ -136,7 +142,7 @@
         <li><a class="button" target="_blank" href="test_particle_ion/test_particle_18.html">test_particle_18</a></li>
         <li><a class="button" target="_blank" href="test_particle_ion/test_particle_19.html">test_particle_19</a></li>
         <li><a class="button" target="_blank" href="test_particle_ion/test_particle_20.html">test_particle_20</a></li>
-        <li><a class="button" target="_blank" href="test_particle_ion/test_particle_21.html">test_particle_21</a></li>
+        <!--<li><a class="button" target="_blank" href="test_particle_ion/test_particle_21.html">test_particle_21</a></li>-->
     </ul>
 
     <h2>Section 4: Sample particles (electron)</h2>
@@ -161,28 +167,38 @@
         <li><a class="button" target="_blank" href="test_particle_e/test_particle_18.html">test_particle_18</a></li>
         <li><a class="button" target="_blank" href="test_particle_e/test_particle_19.html">test_particle_19</a></li>
         <li><a class="button" target="_blank" href="test_particle_e/test_particle_20.html">test_particle_20</a></li>
-        <li><a class="button" target="_blank" href="test_particle_e/test_particle_21.html">test_particle_21</a></li>
+        <!--<li><a class="button" target="_blank" href="test_particle_e/test_particle_21.html">test_particle_21</a></li>-->
     </ul>
 
-    <h2>Section 5: Statistical analysis of correlation between various quantities (ions)</h2>
+    <!--<h2>Section 5: Statistical analysis of correlation between various quantities (ions)</h2>
     <img src="figures/corr_data_p.png" alt="corr_p" width="1000">
-    <div class="caption">Figure 5: \( \gamma_p<2 \) at \(t=0 \) and \(\gamma_p>35</2>\) at \(t=3.1\ell_0/c\). 
-        Continuous intervals with \(\Delta t>0.2\ell_0/c\) are chosen with \(\Gamma_d<1.5\). 
-        The total <br> number of particles is 189. Colors represent the 2D PDF of the quantities.</div>
+    <div class="caption">Figure 5: \( \gamma_p<2 \) at \(t=0 \) and \(\gamma_p>40</2>\) at \(t=3.5\ell_0/c\). 
+        Continuous intervals with \(\Delta t>0.3\ell_0/c\) are chosen with \(\Gamma_d<2\). 
+        The total <br> number of particles is 220. Colors represent the 2D PDF of the quantities.</div>
 
     <br><br>
     <img src="figures/corr_data_p_time.png" alt="corr_p_time" width="1000">
     <div class="caption">Figure 6: Same as Fig. 5 with colors representing the timestamp of individual data points.</div>
 
     <br><br>
-    <img src="figures/hist_2d_p.png" alt="corr_p_2Dhist" width="650">
-    <div class="caption">Figure 7: Same as Fig. 5 but over the entire range of values and with colors  <br>
-        representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
-    <br>
+    <div class="plot-container">
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="figures/hist_2d_x1y1_p.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 500px;">
+                <div class="caption">Figure 7a: Same as Fig. 5a but over the entire range of values and with colors  <br>
+                    representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
+            </div>
+            <div>
+                <img src="figures/hist_2d_p.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 500px;">
+                <div class="caption">Figure 7b: Same as Fig. 5b but over the entire range of values and with colors  <br>
+                    representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
+            </div>
+        </div>
+    </div>
         
     <h2>Section 6: Statistical analysis of correlation between various quantities (electrons)</h2>
     <img src="figures/corr_data_e.png" alt="corr_p" width="1000">
-    <div class="caption">Figure 8: \( \gamma_p<2 \) at \(t=0 \) and \(\gamma_p>350</2>\) at \(t=3.1\ell_0/c\). 
+    <div class="caption">Figure 8: \( \gamma_e<2 \) at \(t=0 \) and \(\gamma_e>350</2>\) at \(t=3.1\ell_0/c\). 
         Continuous intervals with \(\Delta t>0.2\ell_0/c\) are chosen with \(\Gamma_d<1.5\). 
         The total <br> number of particles is 189. Colors represent the 2D PDF of the quantities.</div>
 
@@ -191,40 +207,463 @@
     <div class="caption">Figure 9: Same as Fig. 8 with colors representing the timestamp of individual data points.</div>
     
     <br><br>
-    <img src="figures/hist_2d_e.png" alt="corr_p_2Dhist" width="650">
-    <div class="caption">Figure 10: Same as Fig. 8 but over the entire range of values and with colors  <br>
-        representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
-    <br>
+    <div class="plot-container">
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="figures/hist_2d_x1y1_e.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 500px;">
+                <div class="caption">Figure 10a: Same as Fig. 8a but over the entire range of values and with colors  <br>
+                    representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
+            </div>
+            <div>
+                <img src="figures/hist_2d_e.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 500px;">
+                <div class="caption">Figure 10b: Same as Fig. 8b but over the entire range of values and with colors  <br>
+                    representing the 2D PDF. The histogram of \(\log_{10}p_\perp^\prime\) and \(\log_{10} B^\prime\) are also shown.</div>
+            </div>
+        </div>
+    </div>-->
 
     <div class="plot-container">
-        <h2>Section 7: Magnetic field distribution, \(|b| = \sqrt{b_x^2 + b_y^2 + b_z^2}/b_0\)</h2>
-        
-    </div>
-
-    <h2>Section 8: Current density distribution, \(|j| = \sqrt{j_x^2 + j_y^2 + j_z^2}/n_0q_ec\)</h2>
-    <img src="figures/j_dist_time.png" alt="corr_p_2Dhist" width="550">
-    <div class="caption">Figure 10: PDFs of \(j\) over the box grid measured at different times.</div>
+        <h2>Section 5: Magnetic field distribution, \(|b| = \sqrt{b_x^2 + b_y^2 + b_z^2}/b_0\)</h2>
+        <img src="figures/b_dist_time.png" alt="corr_p_2Dhist" width="550">
+    <div class="caption">Figure 5: PDFs of \(b\) over the box grid measured at different times.</div>
     <br><br>
     <div class="plot-container">
         <div style="display: flex; gap: 20px;">
             <div>
-                <img src="figures/j850.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 510px;">
-                <div class="caption">Figure 14(a): \(t=1.0\ell_0/c\)</div>
+                <img src="figures/b_dist_1.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 6(a): \(t=1.0\ell_0/c\)</div>
             </div>
             <div>
-                <img src="figures/j1710.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 510px;">
-                <div class="caption">Figure 14(b): \(t=2.0\ell_0/c\)</div>
+                <img src="figures/b_dist_2.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 6(b): \(t=2.0\ell_0/c\)</div>
             </div>
             <div>
-                <img src="figures/j2560.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 510px;">
-                <div class="caption">Figure 14(c): \(t=3.0\ell_0/c\)</div>
+                <img src="figures/b_dist_3.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 6(c): \(t=3.0\ell_0/c\)</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <h2>Section 6: Current density distribution, \(|j| = \sqrt{j_x^2 + j_y^2 + j_z^2}/n_0q_ec\)</h2>
+    <img src="figures/j_dist_time.png" alt="corr_p_2Dhist" width="550">
+    <div class="caption">Figure 13: PDFs of \(j\) over the box grid measured at different times.</div>
+    <br><br>
+    <div class="plot-container">
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="figures/j_dist_1.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 7(a): \(t=1.0\ell_0/c\)</div>
+            </div>
+            <div>
+                <img src="figures/j_dist_2.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 7(b): \(t=2.0\ell_0/c\)</div>
+            </div>
+            <div>
+                <img src="figures/j_dist_3.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 7(c): \(t=3.0\ell_0/c\)</div>
             </div>
         </div>
     </div>
 
+    <!--<h2> Section 9: Correlation of 3D particle distribution and J-distribution</h2>
+    <h3>Sec. 9.1 (\(\gamma=5-10\), \(t=1.0\ell_0/c\))</h3>
+        <div>
+            <iframe src="figures/g7.5_t1.0_res512.html" width="60%" height="600" style="border:none;"></iframe>
+            <div class="caption">Fig. 15: 3D distribution of particles at \(t=1.0\ell_0/c\). Found 6732 particles with \(5<\gamma<10\).</div>
+        </div>
+        <p>
+            <pre>
+                <b>Top 10 densest positions</b>
+                x=279.0, y=462.8, z=278.7, KDE=2.33e-08
+                x=269.4, y=460.2, z=269.9, KDE=2.32e-08
+                x=280.7, y=458.2, z=275.4, KDE=2.32e-08
+                x=279.2, y=463.4, z=261.1, KDE=2.30e-08
+                x=278.0, y=456.1, z=278.9, KDE=2.30e-08
+                x=262.2, y=466.0, z=272.5, KDE=2.30e-08
+                x=270.2, y=456.2, z=270.5, KDE=2.29e-08
+                x=273.7, y=466.6, z=256.3, KDE=2.29e-08
+                x=264.4, y=475.9, z=272.4, KDE=2.28e-08
+                x=263.1, y=471.3, z=276.0, KDE=2.28e-08
+              </pre>
+        </p><br>
+        <div>
+            <img src="figures/N_dist_g7.5_t1.0_512.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 1200px;">
+            <div class="caption">Figure 16: Distribution of particles on a slab of thickness 50 units at \(t=1.0\ell_0/c, 5<\gamma<10\)</div>
+        </div>
+        <div>
+            <img src="figures/J_dist_g7.5_t1.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 1200px;">
+            <div class="caption">Figure 17: Distribution of current density J at fixed x, y, z (densest position in particle distribution) \(t=1.0\ell_0/c, 5<\gamma<10\)</div>
+        </div>
+
+        <h3>Sec. 9.2 (\(\gamma=10-15\), \(t=1.0\ell_0/c\))</h3>
+        <div>
+            <iframe src="figures/g12.5_t1.0_res512.html" width="60%" height="600" style="border:none;"></iframe>
+            <div class="caption">Fig. 18: 3D distribution of particles at \(t=1.0\ell_0/c\). Found 3093 particles with \(10<\gamma<15\).</div>
+        </div>
+        <p>
+            <pre>
+                <b>Top 10 densest positions:</b>
+                x=73.9, y=224.5, z=211.8, KDE=1.75e-08
+                x=83.4, y=223.9, z=219.9, KDE=1.75e-08
+                x=86.9, y=221.7, z=213.0, KDE=1.75e-08
+                x=72.6, y=222.3, z=211.1, KDE=1.74e-08
+                x=80.4, y=219.8, z=222.3, KDE=1.74e-08
+                x=66.4, y=232.5, z=204.5, KDE=1.73e-08
+                x=88.0, y=228.8, z=225.3, KDE=1.73e-08
+                x=77.1, y=221.2, z=194.1, KDE=1.71e-08
+                x=83.3, y=241.6, z=219.9, KDE=1.70e-08
+                x=93.5, y=312.9, z=84.6, KDE=1.70e-08
+              </pre>
+        </p><br>
+        <div>
+            <img src="figures/N_dist_g12.5_t1.0_512.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 1200px;">
+            <div class="caption">Figure 19: Distribution of particles on a slab of thickness 30 units at \(t=1.0\ell_0/c, 10<\gamma<15\)</div>
+        </div>
+        <div>
+            <img src="figures/J_dist_g12.5_t1.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 1200px;">
+            <div class="caption">Figure 20: Distribution of current density J at fixed x, y, z (densest position in particle distribution) \(t=1.0\ell_0/c, 10<\gamma<15\)</div>
+        </div>
+
+        <h3>Sec. 9.3 (\(\gamma=15-20\), \(t=1.0\ell_0/c\))</h3>
+        <div>
+            <iframe src="figures/g17.5_t1.0_res512.html" width="60%" height="600" style="border:none;"></iframe>
+            <div class="caption">Fig. 21: 3D distribution of particles at \(t=1.0\ell_0/c\). Found 1943 particles with \(15<\gamma<20\).</div>
+        </div>
+        <p>
+            <pre>
+                <b>Top 10 densest positions:</b>
+                x=108.6, y=122.1, z=281.2, KDE=1.70e-08
+                x=107.2, y=117.4, z=277.0, KDE=1.69e-08
+                x=102.2, y=112.1, z=286.7, KDE=1.68e-08
+                x=120.2, y=109.0, z=298.7, KDE=1.68e-08
+                x=103.9, y=347.0, z=94.1, KDE=1.66e-08
+                x=108.3, y=141.1, z=269.2, KDE=1.66e-08
+                x=84.8, y=144.5, z=263.7, KDE=1.64e-08
+                x=80.2, y=160.1, z=268.8, KDE=1.64e-08
+                x=128.9, y=352.8, z=87.1, KDE=1.63e-08
+                x=122.3, y=370.5, z=78.1, KDE=1.63e-08              
+              </pre>
+        </p><br>
+        <div>
+            <img src="figures/N_dist_g17.5_t1.0_512.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 1200px;">
+            <div class="caption">Figure 22: Distribution of particles on a slab of thickness 30 units at \(t=1.0\ell_0/c, 15<\gamma<20\)</div>
+        </div>
+        <div>
+            <img src="figures/J_dist_g17.5_t1.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 1200px;">
+            <div class="caption">Figure 23: Distribution of current density J at fixed x, y, z (densest position in particle distribution) \(t=1.0\ell_0/c, 15<\gamma<20\)</div>
+        </div>-->
+<br><br><br>
+        <h2>Section 7: Statistical correlation for TTD (electrons)</h2>
+        All particles tracked in the simulation are selected.
+        <p>(1) \(\Gamma_d<2\) <br> (2) \(p^\prime_\parallel>p^\prime_\perp\) <br> (3) \(\Delta t\geq 0.2\ell_0/c\)</p>
+
+        <h3>Subsec. 7A: TTD - End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+        <div class="plot-container">
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <img src="corr_plots/t_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 8(a)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/t_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 8(b)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/t_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 8(c)</div>
+                </div>
+            </div>
+<br><br>
+            <div class="plot-container">
+                <div style="display: flex; gap: 20px;">
+                    <div>
+                        <img src="corr_plots/t_grad_para_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                        <div class="caption">Figure 8(d)</div>
+                    </div>
+                    <div>
+                        <img src="corr_plots/t_grad_perp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                        <div class="caption">Figure 8(e)</div>
+                    </div>
+                    
+                </div>
+<br><br><br>
+        <h3>Subsec. 7B: End point of simulation: \(t_{\rm end}=3.5\ell_0/c\)</h3>
+        <div class="plot-container">
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <img src="corr_plots/t_ppara_t3.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 9(a)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/t_pperp_t3.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 9(b)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/t_x1y1_t3.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 9(c)</div>
+                </div>
+            </div>
+<br><br><br>        
+        <h2>Section 8: Statistical correlation for mirror acceleration (electrons), \(\gamma_e>\)200</h2>
+        <p>(1) \(\Gamma_d<2\) <br> (2) \(\gamma_e>\)200 at \(t=t_{\rm end}\) <br> (3) \(\Delta t\geq 0.3\ell_0/c\)</p>
+
+        <h3>Case A: End point of simulation: \(t_{\rm end}=1.8\ell_0/c\)</h3>
+        <p># particles found: 1444</p>
+        <div class="plot-container">
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <img src="corr_plots/m_g200_ppara_t1.8.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 10(a)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/m_g200_pperp_t1.8.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 10(b)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/m_g200_x1y1_t1.8.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 10(c)</div>
+                </div>
+            </div>
+
+        <h3>Case B: End point of simulation: \(t_{\rm end}=2.0\ell_0/c\)</h3>
+        <p># particles found: 1461</p>
+        <div class="plot-container">
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <img src="corr_plots/m_g200_ppara_t2.0.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 11(a)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/m_g200_pperp_t2.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 11(b)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/m_g200_x1y1_t2.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 11(c)</div>
+                </div>
+            </div>
+
+            <h3>Case C: End point of simulation: \(t_{\rm end}=2.2\ell_0/c\)</h3>
+            <p># particles found: 1600</p>
+            <div class="plot-container">
+                <div style="display: flex; gap: 20px;">
+                    <div>
+                        <img src="corr_plots/m_g200_ppara_t2.2.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                        <div class="caption">Figure 12(a)</div>
+                    </div>
+                    <div>
+                        <img src="corr_plots/m_g200_pperp_t2.2.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                        <div class="caption">Figure 12(b)</div>
+                    </div>
+                    <div>
+                        <img src="corr_plots/m_g200_x1y1_t2.2.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                        <div class="caption">Figure 12(c)</div>
+                    </div>
+                </div>
+
+                <h3>Case D: End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+                <p># particles found: 2074</p>
+                <div class="plot-container">
+                    <div style="display: flex; gap: 20px;">
+                        <div>
+                            <img src="corr_plots/m_g200_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                            <div class="caption">Figure 13(a)</div>
+                        </div>
+                        <div>
+                            <img src="corr_plots/m_g200_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                            <div class="caption">Figure 13(b)</div>
+                        </div>
+                        <div>
+                            <img src="corr_plots/m_g200_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                            <div class="caption">Figure 13(c)</div>
+                        </div>
+                    </div>
+
+                    <h3>Case E: End point of simulation: \(t_{\rm end}=2.8\ell_0/c\)</h3>
+                    <p># particles found: 2383</p>
+                    <div class="plot-container">
+                        <div style="display: flex; gap: 20px;">
+                            <div>
+                                <img src="corr_plots/m_g200_ppara_t2.8.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                <div class="caption">Figure 14(a)</div>
+                            </div>
+                            <div>
+                                <img src="corr_plots/m_g200_pperp_t2.8.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                <div class="caption">Figure 14(b)</div>
+                            </div>
+                            <div>
+                                <img src="corr_plots/m_g200_x1y1_t2.8.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                <div class="caption">Figure 14(c)</div>
+                            </div>
+                        </div>
+                        <br><br><br> 
+                        <h2>Section 9: Statistical correlation for mirror acceleration (electrons), \(\gamma_e>\)250</h2>
+                        <p>(1) \(\Gamma_d<2\) <br> (2) \(\gamma_e>\)250 at \(t=t_{\rm end}\) <br> (3) \(\Delta t\geq 0.3\ell_0/c\)</p>
+                
+                        <h3>Case A: End point of simulation: \(t_{\rm end}=1.8\ell_0/c\)</h3>
+                        <p># particles found: 729</p>
+                        <div class="plot-container">
+                            <div style="display: flex; gap: 20px;">
+                                <div>
+                                    <img src="corr_plots/m_g250_ppara_t1.8.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 15(a)</div>
+                                </div>
+                                <div>
+                                    <img src="corr_plots/m_g250_pperp_t1.8.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 15(b)</div>
+                                </div>
+                                <div>
+                                    <img src="corr_plots/m_g250_x1y1_t1.8.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 15(c)</div>
+                                </div>
+                            </div>
+                
+                        <h3>Case B: End point of simulation: \(t_{\rm end}=2.0\ell_0/c\)</h3>
+                        <p># particles found: 730</p>
+                        <div class="plot-container">
+                            <div style="display: flex; gap: 20px;">
+                                <div>
+                                    <img src="corr_plots/m_g250_ppara_t2.0.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 16(a)</div>
+                                </div>
+                                <div>
+                                    <img src="corr_plots/m_g250_pperp_t2.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 16(b)</div>
+                                </div>
+                                <div>
+                                    <img src="corr_plots/m_g250_x1y1_t2.0.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 16(c)</div>
+                                </div>
+                            </div>
+                
+                            <h3>Case C: End point of simulation: \(t_{\rm end}=2.2\ell_0/c\)</h3>
+                            <p># particles found: 813</p>
+                            <div class="plot-container">
+                                <div style="display: flex; gap: 20px;">
+                                    <div>
+                                        <img src="corr_plots/m_g250_ppara_t2.2.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                        <div class="caption">Figure 17(a)</div>
+                                    </div>
+                                    <div>
+                                        <img src="corr_plots/m_g250_pperp_t2.2.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                        <div class="caption">Figure 17(b)</div>
+                                    </div>
+                                    <div>
+                                        <img src="corr_plots/m_g250_x1y1_t2.2.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                        <div class="caption">Figure 17(c)</div>
+                                    </div>
+                                </div>
+                
+                                <h3>Case D: End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+                                <p># particles found: 1012</p>
+                                <div class="plot-container">
+                                    <div style="display: flex; gap: 20px;">
+                                        <div>
+                                            <img src="corr_plots/m_g250_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                            <div class="caption">Figure 18(a)</div>
+                                        </div>
+                                        <div>
+                                            <img src="corr_plots/m_g250_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                            <div class="caption">Figure 18(b)</div>
+                                        </div>
+                                        <div>
+                                            <img src="corr_plots/m_g250_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                            <div class="caption">Figure 18(c)</div>
+                                        </div>
+                                    </div>
+                                
+    
+    <br><br><br>    
+    <h2>Section 10: Statistical correlation for mirror acceleration (electrons), \(\gamma_e>\)150</h2>
+    <p>(1) \(\Gamma_d<2\) <br> (2) \(\gamma_e>\)150 at \(t=t_{\rm end}\) <br> (3) \(\Delta t\geq 0.3\ell_0/c\)</p>
+
+    <h3>Case A: End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+    <p># particles found: 4144</p>
+    <div class="plot-container">
+        <div style="display: flex; gap: 20px;">
+            <div>
+                <img src="corr_plots/m_g150_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 19(a)</div>
+            </div>
+            <div>
+                <img src="corr_plots/m_g150_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 19(b)</div>
+            </div>
+            <div>
+                <img src="corr_plots/m_g150_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                <div class="caption">Figure 19(c)</div>
+            </div>
+        </div>
+        <br><br><br>  
+        <h2>Section 11: Statistical correlation for mirror acceleration (electrons), \(\gamma_e>\)100</h2>
+        <p>(1) \(\Gamma_d<2\) <br> (2) \(\gamma_e>\)100 at \(t=t_{\rm end}\) <br> (3) \(\Delta t\geq 0.3\ell_0/c\)</p>
+    
+        <h3>Case A: End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+        <p># particles found: 8573</p>
+        <div class="plot-container">
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <img src="corr_plots/m_g100_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 20(a)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/m_g100_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 20(b)</div>
+                </div>
+                <div>
+                    <img src="corr_plots/m_g100_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                    <div class="caption">Figure 20(c)</div>
+                </div>
+            </div>
+    
+                    <h2>Section 9: Statistical correlation for reconnection (electrons), \(\Gamma_d>2\)</h2>
+                    All particles tracked in the simulation are selected.
+                    
+                    <h3>Case A: End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+                    <div class="plot-container">
+                        <div style="display: flex; gap: 20px;">
+                            <div>
+                                <img src="corr_plots/r_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                <div class="caption">Figure 21(a)</div>
+                            </div>
+                            <div>
+                                <img src="corr_plots/r_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                <div class="caption">Figure 21(b)</div>
+                            </div>
+                            <div>
+                                <img src="corr_plots/r_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                <div class="caption">Figure 21(c)</div>
+                            </div>
+                        </div>
+                        
+                            
+                                
+                        
+<br><br><br>
+                        <h2>Section 10: Statistical correlation for reconnection (electrons), \(|E|>|B|\)</h2>
+                        All particles tracked in the simulation are selected.
+                        <h3>End point of simulation: \(t_{\rm end}=2.5\ell_0/c\)</h3>
+                        <div class="plot-container">
+                            <div style="display: flex; gap: 20px;">
+                                <div>
+                                    <img src="corr_plots/r2_ppara_t2.5.png" alt="Plot 1" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 22(a)</div>
+                                </div>
+                                <div>
+                                    <img src="corr_plots/r2_pperp_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 22(b)</div>
+                                </div>
+                                <div>
+                                    <img src="corr_plots/r2_x1y1_t2.5.png" alt="Plot 2" style="max-width: 100%; height: auto; width: 350px;">
+                                    <div class="caption">Figure 22(c)</div>
+                                </div>
+                            </div>
+
+                
     <footer>
         <hr>
-        <p style="font-size: 0.8em;">Created by Saikat Das — Last updated July 2025</p>
+        <p style="font-size: 0.8em;">Created by Saikat Das — Last updated Aug 2025</p>
     </footer>
 
 </body>
